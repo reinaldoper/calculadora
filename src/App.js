@@ -37,29 +37,35 @@ function App() {
     const total2 = sum2.reduce((resultado, quantidade) => {
       return (resultado + quantidade.number);
     }, []);
-    if (sinal === 'R') {
-      setResult(Math.sqrt(total2));
-      setNumber([]);
-      setCalc([]);
-    } else if (sinal === 'C') {
-      setResult(Math.cos(total2));
-      setNumber([]);
-      setCalc([]);
-    } else if (sinal === 'S') {
-      setResult(Math.sin(total2));
-      setNumber([]);
-      setCalc([]);
-    } else if (sinal === 'L') {
-      setResult(Math.log(total2));
-      setNumber([]);
-      setCalc([]);
-    } else {
-      const total = sum.reduce((resultado, quantidade) => {
-        return (resultado + quantidade.number);
-      }, []);
-      setResult(returnResult(Number(total2), Number(total)));
-      setNumber([]);
-      setCalc([]);
+    switch (sinal) {
+      case 'R':
+        setResult(Math.sqrt(total2));
+        setNumber([]);
+        setCalc([]);
+        break;
+      case 'S':
+        setResult(Math.sin(total2));
+        setNumber([]);
+        setCalc([]);
+        break;
+      case 'C':
+        setResult(Math.cos(total2));
+        setNumber([]);
+        setCalc([]);
+        break;
+      case 'L':
+        setResult(Math.log(total2));
+        setNumber([]);
+        setCalc([]);
+        break;
+      default:
+        const total = sum.reduce((resultado, quantidade) => {
+          return (resultado + quantidade.number);
+        }, []);
+        setResult(returnResult(Number(total2), Number(total)));
+        setNumber([]);
+        setCalc([]);
+        break;
     }
 
   }
