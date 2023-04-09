@@ -29,7 +29,7 @@ function App() {
       return (num1 / 100) * num2;
     };
   }
-
+  // test
   const handleIgual = () => {
     setResult('');
     const sum = number;
